@@ -25,6 +25,8 @@ Additionnaly, you can download our pre-computed discriminative elements for:
 - [CAD model of Trevi fountain]().
 - [PMVS model of san marco square]().
 
+
+The paintings we used to test our method are available [here](http://www.di.ens.fr/willow/research/painting_to_3d/data/Paintings.zip) (40MB)
 ### RUNNING THE CODE:
 
 1. Start by compiling the code.  At the Matlab command prompt run:
