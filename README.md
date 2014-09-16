@@ -9,7 +9,7 @@ Painting-to-3D Model Alignment Via Discriminative Visual Elements; M. Aubry, B. 
 ### DOWNLOADING THE DATA
 
 If you want to compute the discriminative elements, you have to download the rendered views and corresponding data [here]().
-Alternatively, you can download our pre-computed [discriminative elements](http://www.di.ens.fr/willow/research/paintingTo3D/data/DEs_basilica.tar) and the [3D model].
+Alternatively, you can download our pre-computed [discriminative elements](http://www.di.ens.fr/willow/research/paintingTo3D/data/DEs_basilica.tar) and the [3D model]().
 
 ### RUNNING THE CODE:
 
