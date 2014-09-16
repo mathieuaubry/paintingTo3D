@@ -7,13 +7,17 @@ load([MODEL_DIR '/all_DEs.mat'],'all_DEs');
 x=[];
 X=[];
 conf=[];
-
 fprintf('advancement : 00%%');
 all_responses=all_hogs*all_DEs.ws';
-for i_DE=1:10%size(all_DEs.ws,1)
+thres=view_params.norm_thresh_det;
+for i_DE=1:size(all_DEs.ws,1)
     fprintf('\b\b\b%02i%%',round(100*i_DE/size(all_DEs.ws,1)));
+   if mod(i_DE,100)==0 && size(x,1)>125
+       c=sort(conf,'descend');
+       thres=c(125);
+   end
     responses=all_responses(:,i_DE);%+all_DEs.bs(i_DE);
-    [nmsbbox,nmsconf,resid]=prunebboxes(bboxes,responses,view_params.nms_param_det,view_params.norm_thresh_det,10);
+    [nmsbbox,nmsconf,resid]=prunebboxes(bboxes,responses,view_params.nms_param_det,thres,10);
     bbox3d=squeeze(all_DEs.bbox_3d(i_DE,:,:));
     N_det=size(nmsbbox,1);
     confidences=zeros(5*N_det,1);
@@ -55,8 +59,9 @@ inlierThresh=0.015*focal;
 K=[focal 0 size(I,1)/2; 0 focal size(I,2)/2; 0 0 1];
 [P,nInliers] = ExemplarResectioning(K,X,x,inlierThresh,10000);
 
-R= meshGenerateColored(P,meshFileName,size(I),BIN_PATH);
-imwrite(R,sprintf('%s/alignment.jpg',MODEL_DIR));
+save('test_transfer.mat', 'P');
+%R= meshGenerateColored(P,meshFileName,size(I),BIN_PATH);
+%imwrite(R,sprintf('%s/alignment.jpg',MODEL_DIR));
 
 
 

@@ -1,4 +1,5 @@
-
+addpath('renderer');
+addpath('local');
 addpath('/meleze/data0/libs/APT');
 global APT_PARAMS;
 if isempty(APT_PARAMS)
