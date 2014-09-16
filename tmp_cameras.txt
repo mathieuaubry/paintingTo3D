@@ -1,0 +1,1 @@
+./tmp_cameras/00000001.txt

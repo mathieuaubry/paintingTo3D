@@ -1,14 +1,13 @@
-function P = getMathieuViewpoint(CameraStruct,i,imageSize)
+function P = getViewpoint(camera,imageSize)
 % Inputs:
-% CameraStruct - Set of sampled viewpoints
-% i - Index of sampled viewpoint
+% camera
 % imageSize - Painting size
 %
 % Outputs:
 % P - Camera matrix
 if nargin<3
-    imageSize(1)=CameraStruct(i).nrows;
-    imageSize(2)=CameraStruct(i).ncols;
+    imageSize(1)=camera.nrows;
+    imageSize(2)=camera.ncols;
 end
 
-            P = [-1 0 imageSize(2); 0 1 1; 0 0 1]*CameraStruct(i).K*CameraStruct(i).R*[eye(3) -CameraStruct(i).C];
+            P = [-1 0 imageSize(2); 0 1 1; 0 0 1]*camera.K*camera.R*[eye(3) -camera.C];

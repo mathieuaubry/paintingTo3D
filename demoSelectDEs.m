@@ -15,14 +15,17 @@ APT_PARAMS.exec_name = f;
 
 
 addpath('./code');
-DEinit_n100_ms4;
+init_DE_params;
+init_view_selection_params;
 MODEL_DIR='/meleze/data1/maaubry/paintings_release/cache_san_marco_sample_30_up_10_angles_2_add_100';
-load([MODEL_DIR '/cameras.mat']);
+load([MODEL_DIR '/cameras.mat'],'CameraStruct');
 N_images=length('cameras.mat');
 ELTS_DIR='/meleze/data1/maaubry/paintings_release/cache_san_marco_sample_30_up_10_angles_2_add_100/DEs';
 mkdir(ELTS_DIR);
 
 
-indices_to_visit=randperm( 1:(length(CameraStruct)));
-APT_run('getDiscriminativElements',indices_to_visit,{params},'UseCluster', 1, 'ClusterID',1,'NJobs', 50 );
+indices_to_visit=randperm( (length(CameraStruct)));
+%getDiscriminativElements(1,MODEL_DIR,ELTS_DIR,CameraStruct,DE_params,view_params);
+%APT_run('getDiscriminativElements',indices_to_visit',{MODEL_DIR},{ELTS_DIR},{CameraStruct},{DE_params},{view_params},'UseCluster', 1, 'ClusterID',1,'NJobs', 50 );
 
+summarizeDEs(ELTS_DIR,MODEL_DIR,indices_to_visit)

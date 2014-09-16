@@ -1,4 +1,4 @@
-function [ProbInlier,isInlier,cameras] = evaluateViewpoints(Xgt,Pgt,CameraStruct,VIEW_DIR,view_params)
+function [ProbInlier,isInlier,cameras] = evaluateViewpoints(Xgt,Pgt,CameraStruct,view_params)
 % Inputs:
 % Pgt - Ground truth camera matrix
 % P - Target camera matrices
@@ -9,41 +9,26 @@ function [ProbInlier,isInlier,cameras] = evaluateViewpoints(Xgt,Pgt,CameraStruct
 % Outputs:
 % ProbInlier - sum(exp(-error^2/(2sigmaInliner^2)))
 
-% Parameters:
-
-
-if ~isfield(view_params,'threshInlier')
-    view_params.threshInlier = 0.1; % Inlier threshold for a point (in image percentage)
-end
-if ~isfield(view_params,'sigmaDepth')
-    view_params.sigmaDepth=0.2;% Inlier threshold for a point (in image percentage)
-end
-if ~isfield(view_params,'sigmaDirection')
-    view_params.sigmaDirection=0.5;% Inlier threshold for a point (in image percentage)
-end
-if ~isfield(view_params,'sigmaInlier')
-    view_params.sigmaInlier=0.2;% Inlier threshold for a point (in image percentage)
-end
 
 %% get all cameras
 imageSize=size(Xgt);
 [Kgt Rgt Tgt]=decomposeP(Pgt);
 P = zeros(3,4,length(CameraStruct));
 for i = 1:length(CameraStruct)
-    P(:,:,i)=getMathieuViewpoint(CameraStruct,i,imageSize);
+    P(:,:,i)=getViewpoint(CameraStruct{i},imageSize);
 end
 
 %% get points for test
 [row ,col]=find(sum(abs(Xgt),3)>0);
 while size(row,1)>view_params.max_evaluation_points;
-    row=row(1:10:end);
-    col=col(1:10:end);
+    row=row(1:2:end);
+    col=col(1:2:end);
 end
 NValidGTPixels=size(row,1);
 if(NValidGTPixels==0)
     warning('The Mesh is not visible in the GT camera');
     ProbInlier = zeros(1,size(P,3));
-    isInlier = zeros(1,size(P,3));
+    isInlier = false(1,size(P,3));
     cameras={};
     return;
 end
@@ -55,7 +40,7 @@ Xinside=squeeze(Xgt(indices,:))';
 
 %% test all cameras
 ProbInlier = zeros(1,size(P,3));
-isInlier = zeros(1,size(P,3));
+isInlier = false(1,size(P,3));
 for i = 1:size(P,3)
     Pi = squeeze(P(:,:,i));
     [Ki Ri Ti]=decomposeP(Pi);
@@ -110,7 +95,7 @@ for i = 1:size(P,3)
         isInlier(i) = ProbInlier(i)>view_params.threshInlier;
     else
         ProbInlier(i)=0;
-        isInlier(i) = 0;
+        isInlier(i) = false;
     end
 end
 [temp camerasIndices]=sort(ProbInlier,'descend');

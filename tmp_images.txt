@@ -1,0 +1,1 @@
+./tmp_images/00000001.ppm
