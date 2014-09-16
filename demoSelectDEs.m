@@ -2,10 +2,10 @@
 addpath('./code');
 init_DE_params;
 init_view_selection_params;
-MODEL_DIR='/meleze/data1/maaubry/paintings_release/cache_san_marco_sample_30_up_10_angles_2_add_100';
+MODEL_DIR='./cache_san_marco_basilica';
 load([MODEL_DIR '/cameras.mat'],'CameraStruct');
 N_images=length('cameras.mat');
-ELTS_DIR='/meleze/data1/maaubry/paintings_release/cache_san_marco_sample_30_up_10_angles_2_add_100/DEs';
+ELTS_DIR='./cache_san_marco_basilica/DEs';
 mkdir(ELTS_DIR);
 
 
