@@ -1,4 +1,4 @@
-function []=alignPainting(MODEL_DIR,painting_name,meshFileName,DE_params,view_params,BIN_PATH)
+function []=alignPainting(MODEL_DIR,painting_name,DE_params,view_params,output_name)
 
 I=im2double(imread(painting_name));
 [all_hogs unused bboxes]=getHogVector(I,DE_params);
@@ -59,7 +59,7 @@ inlierThresh=0.015*focal;
 K=[focal 0 size(I,1)/2; 0 focal size(I,2)/2; 0 0 1];
 [P,nInliers] = ExemplarResectioning(K,X,x,inlierThresh,10000);
 
-save('test_transfer.mat', 'P');
+save(output_name, 'P','nInliers');
 %R= meshGenerateColored(P,meshFileName,size(I),BIN_PATH);
 %imwrite(R,sprintf('%s/alignment.jpg',MODEL_DIR));
 
