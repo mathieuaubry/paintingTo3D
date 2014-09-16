@@ -17,7 +17,7 @@ If you want to use one of our models, you have to download the rendered views an
 - [PMVS model of san marco square](). The original 3D model is available [here]().
 
 
-Alternatively, you can use the code avalable [here](https://github.com/brussell123/3drr2011) to generate the needed data for your own 3D model.
+Alternatively, you can use the code available [here](http://github.com/brussell123/3drr2011) to generate the needed data for your own 3D model.
 
 Additionnaly, you can download our pre-computed discriminative elements for:
 - [CAD model of San Marco Basilica]().
