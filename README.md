@@ -6,6 +6,10 @@ in the following paper:
 Painting-to-3D Model Alignment Via Discriminative Visual Elements; M. Aubry, B. Russell and J. Sivic; ACM Transactions on Graphics, 2014 (presented at SIGGRAPH 2014)
 [project webpage](http://www.di.ens.fr/willow/research/painting_to_3d/)
 
+### DOWNLOADING THE DATA
+
+If you want to compute the discriminative elements, you have to download the rendered views and corresponding data [here]().
+Alternatively, you can download our pre-computed [discriminative elements](http://www.di.ens.fr/willow/research/paintingTo3D/data/DEs_basilica.tar) and the [3D model].
 
 ### RUNNING THE CODE:
 
