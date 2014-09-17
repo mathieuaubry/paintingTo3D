@@ -1,6 +1,9 @@
 function []=alignPainting(MODEL_DIR,painting_name,DE_params,view_params,output_name)
 
 I=im2double(imread(painting_name));
+if size(I,3)==1
+    I = repmat(I,[1 1 3]);
+end
 [all_hogs unused bboxes]=getHogVector(I,DE_params);
 
 load([MODEL_DIR '/all_DEs.mat'],'all_DEs');
