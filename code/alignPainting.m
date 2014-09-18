@@ -18,7 +18,7 @@ ratios=[];
 %fprintf('advancement : 00%%');
 all_responses=all_hogs*all_DEs.ws';
 %thres=view_params.norm_thresh_det;
-for i_DE=1:10000%size(all_DEs.ws,1)
+for i_DE=1:size(all_DEs.ws,1)
     % fprintf('\b\b\b%02i%%',round(100*i_DE/size(all_DEs.ws,1)));
 %     if mod(i_DE,100)==0 && size(x,1)>200
 %         c=sort(ratios,'descend');
