@@ -8,6 +8,17 @@ Painting-to-3D Model Alignment Via Discriminative Visual Elements
 ACM Transactions on Graphics, 2014 (presented at SIGGRAPH 2014)
 [PDF]() | [bibtex]() | [project webpage](http://www.di.ens.fr/willow/research/painting_to_3d/)
 
+
+### DOWNLOADING THE CODE:
+
+You can download a [zip file of the source code](https://github.com/mathieuaubry/paintingTo3D/archive/master.zip) directly.  
+
+Alternatively, you can clone it from GitHub as follows:
+
+``` sh
+$ git clone https://github.com/mathieuaubry/paintingTo3D.git
+```
+
 ### DOWNLOADING THE DATA
 
 If you want to use one of our models, you have to download the rendered views and corresponding data for the 3D model you want to use:
