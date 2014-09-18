@@ -41,3 +41,7 @@ The paintings we used to test our method are available [here](http://www.di.ens.
 Alternatively, you can download our pre-computed discriminative elements (see DOWNLOAD THE DATA section).
 
 4. [demoAlignPainting.m](https://github.com/mathieuaubry/paintingTo3D/blob/master/demoAlignPaintings.m) is a script that uses the discriminative elements to recover the camera parameters corresponding to the viewpoint of the painting.
+
+### ACKNOWLEDGMENTS:
+
+The functions features.cc and bboverlap.m have been adapted from Ross Girshick's and Pedro Felzenswalb's implementation available at https://github.com/rbgirshick/voc-dpm
