@@ -1,4 +1,4 @@
-function []=alignPainting_ratio(MODEL_DIR,painting_name,DE_params,view_params,out_name)
+function []=alignPainting(MODEL_DIR,painting_name,DE_params,view_params,output_name)
 
 if exist(out_name)
     return;
@@ -7,7 +7,7 @@ I=im2double(imread(painting_name));
 if size(I,3)==1
     I = repmat(I,[1 1 3]);
 end
-%I=miresize();
+
 [all_hogs unused bboxes]=getHogVector(I,DE_params);
 
 load([MODEL_DIR '/all_DEs.mat'],'all_DEs');
@@ -75,6 +75,7 @@ focal=sqrt(size(I,1)^2+size(I,2)^2);
 inlierThresh=0.015*focal;
 K=[focal 0 size(I,1)/2; 0 focal size(I,2)/2; 0 0 1];
 [P,nInliers] = ExemplarResectioning(K,X,x,inlierThresh,10000);
+
 
 save(out_name, 'P','nInliers','I');
 %R= meshGenerateColored(P,meshFileName,size(I),BIN_PATH);
