@@ -10,6 +10,9 @@ mkdir(ELTS_DIR);
 
 
 indices_to_visit=randperm( (length(CameraStruct))); %this compute all DEs. In practice, you can take less by indices_to_visit=indices_to_visit(1:500)
-getDiscriminativElements(1,MODEL_DIR,ELTS_DIR,CameraStruct,DE_params,view_params);
+%% WARNING: this loop should be parallelized
+for view_id=1:length(indices_to_visit)
+  getDiscriminativElements(view_id,MODEL_DIR,ELTS_DIR,CameraStruct,DE_params,view_params);
+end
 
 summarizeDEs(ELTS_DIR,MODEL_DIR,indices_to_visit)
