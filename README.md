@@ -35,7 +35,9 @@ The paintings we used to test our method are available [here](http://www.di.ens.
    >> compile;
    ```
 
-2. (Optional) [demoSelectDEs.m](https://github.com/mathieuaubry/paintingTo3D/blob/master/demoSelectDEs.m) is a script that computes the discriminative elements from a set of rendered views of a 3D model and their associated Cameras and 3D points. It must be run before doing detection. 
-Alternatively, you can download our pre-computed discriminative elements (see DOWNLOAD THE DATAsection).
+2. Download or generate the rendered views of the model you want to work with.
+ 
+3. (Optional) [demoSelectDEs.m](https://github.com/mathieuaubry/paintingTo3D/blob/master/demoSelectDEs.m) is a script that computes the discriminative elements from a set of rendered views of a 3D model and their associated Cameras and 3D points. It must be run before doing detection. 
+Alternatively, you can download our pre-computed discriminative elements (see DOWNLOAD THE DATA section).
 
-3. [demoAlignPainting.m](https://github.com/mathieuaubry/paintingTo3D/blob/master/demoAlignPaintings.m) is a script that uses the discriminative elements to recover the camera parameters corresponding to the viewpoint of the painting.
+4. [demoAlignPainting.m](https://github.com/mathieuaubry/paintingTo3D/blob/master/demoAlignPaintings.m) is a script that uses the discriminative elements to recover the camera parameters corresponding to the viewpoint of the painting.
