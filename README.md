@@ -28,9 +28,8 @@ If you want to use one of our models, you have to download the rendered views an
 - [PMVS model of san marco square](http://www.di.ens.fr/willow/research/painting_to_3d/data/cache_san_marco_square.tar). 
 
 
-Alternatively, you can use the code available [here](http://github.com/brussell123/3drr2011) to generate the needed data for your own 3D model.
 
-Additionnaly, you can download our pre-computed discriminative elements for:
+Additionaly, you can download our pre-computed discriminative elements for:
 - [CAD model of San Marco Basilica](http://www.di.ens.fr/willow/research/painting_to_3d/data/all_DEs_san_marco_basilica.mat) (104MB).
 - [CAD model of Notre Dame](http://www.di.ens.fr/willow/research/painting_to_3d/data/all_DEs_notre_dame.mat).
 - [CAD model of Trevi fountain](http://www.di.ens.fr/willow/research/painting_to_3d/data/all_DEs_trevi.mat).
