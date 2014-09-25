@@ -25,7 +25,7 @@ If you want to use one of our models, you have to download the rendered views an
 - [CAD model of San Marco Basilica](http://www.di.ens.fr/willow/research/painting_to_3d/data/cache_san_marco_basilica.tar) (614MB). The original 3D model is available [here](http://sketchup.google.com/3dwarehouse/details?mid=433bfb7d61901dc65822c6ca7b1d5d61&prevstart=0).
 - [CAD model of Notre Dame](http://www.di.ens.fr/willow/research/painting_to_3d/data/cache_notre_dame.tar) (2GB). The original 3D model is available [here](https://3dwarehouse.sketchup.com/model.html?redirect=1&mid=69d9e3c4f1e6359cc45a0a86a468dd45&prevstart=72).
 - [CAD model of Trevi fountain](http://www.di.ens.fr/willow/research/painting_to_3d/data/cache_trevi.tar) (792MB). The original 3D model is available [here](https://3dwarehouse.sketchup.com/model.html?redirect=1&mid=db52a9472001b79b43babf42c8cb195).
-- [PMVS model of san marco square](http://www.di.ens.fr/willow/research/painting_to_3d/data/cache_san_marco_square.tar) (8.6GB). 
+
 
 
 
@@ -33,7 +33,7 @@ Additionaly, you can download our pre-computed discriminative elements for:
 - [CAD model of San Marco Basilica](http://www.di.ens.fr/willow/research/painting_to_3d/data/all_DEs_san_marco_basilica.mat) (104MB).
 - [CAD model of Notre Dame](http://www.di.ens.fr/willow/research/painting_to_3d/data/all_DEs_notre_dame.mat) (107MB).
 - [CAD model of Trevi fountain](http://www.di.ens.fr/willow/research/painting_to_3d/data/all_DEs_trevi.mat) (131MB).
-- [PMVS model of san marco square](http://www.di.ens.fr/willow/research/painting_to_3d/data/all_DEs_san_marco_square.mat) (215MB).
+
 
 
 The paintings we used to test our method are available [here](http://www.di.ens.fr/willow/research/painting_to_3d/data/Paintings.zip) (40MB)
