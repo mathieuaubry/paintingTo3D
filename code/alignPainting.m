@@ -71,9 +71,9 @@ x=x(order(1:125),:)';
 X=X(order(1:125),:)';
 
 
-focal=sqrt(size(I,1)^2+size(I,2)^2);
+focal=sqrt(size(I,1)^2+size(I,2)^2)/sqrt(2);
 inlierThresh=0.015*focal;
-K=[focal 0 size(I,1)/2; 0 focal size(I,2)/2; 0 0 1];
+K=[focal 0 size(I,2)/2; 0 focal size(I,1)/2; 0 0 1];
 [P,nInliers] = ExemplarResectioning(K,X,x,inlierThresh,10000);
 
 
