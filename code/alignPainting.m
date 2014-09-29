@@ -61,9 +61,9 @@ end
 save(sprintf('%s/correspondences2D3D.mat',MODEL_DIR),'x','X','conf','ratios');
 
 [ratios order]=sort(ratios,'descend');
-conf=conf(order(1:200));
-x=x(order(1:200),:);
-X=X(order(1:200),:);
+conf=conf(order(1:1000));
+x=x(order(1:1000),:);
+X=X(order(1:1000),:);
 
 [conf order]=sort(conf,'descend');
 %rat=rat(order(1:125));
