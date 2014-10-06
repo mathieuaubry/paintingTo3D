@@ -103,7 +103,7 @@ run the following in the Bash shell:
    $ export LIBGL_ALWAYS_INDIRECT=1
    ```
 
-   Then try to run demoRendering.m again.
+   Then try to run [demoRendering.m](https://github.com/mathieuaubry/paintingTo3D/blob/master/demoRendering.m) again.
 
 
 ### RUNNING THE CODE:
