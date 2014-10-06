@@ -85,6 +85,7 @@ with -fPIC, then you need to recompile trimesh2.  Run inside a Bash shell:
 
    ``` sh
    $ cd $TRIMESH2
+   $ make clean
    $ make ARCHOPTS=-fPIC
    ```
 
