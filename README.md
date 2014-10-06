@@ -49,7 +49,12 @@ The following are instructions for compiling the renderer.
 
    - $PAINTING_CODE - location of "paintingTo3D" code
    - $TRIMESH2 - location of trimesh2 folder
-   - $MEX - command-line location of mex compiler (get location by running "fullfile(matlabroot,'bin','mex')" in Matlab)
+   - $MEX - command-line location of mex compiler; get the location by running in Matlab:
+ 
+      ``` sh
+      >> fullfile(matlabroot,'bin','mex')
+      ```
+
    - $ARCH - set this to one of {Linux | Linux64 | Darwin | Darwin64} depending on which architecture you are compiling (e.g. "Darwin64" is 64-bit Mac)
 
 3. Run the following in a Bash shell:
