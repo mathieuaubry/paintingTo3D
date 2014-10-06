@@ -1,10 +1,6 @@
-function [pipeName,logName] = StartOpenGLServer(meshName,BIN_OPENGL,imageSize)
-% $$$ function pipeName = StartOpenGLServer(meshName,BIN_OPENGL,SH_SCRIPT)
+function [pipeName,logName] = StartOpenGLServer(meshName,imageSize)
 % Inputs:
 % meshName
-% pipeName
-% BIN_OPENGL
-% SH_SCRIPT
 
 nn = tempname;
 pipeName = [nn '_pipe.txt'];
@@ -17,6 +13,9 @@ if ~exist(meshName,'file') && ~exist(meshName,'dir')
   logName = [];
   return;
 end
+
+% Get path to OpenGL rendering binary:
+BIN_OPENGL = fullfile(fileparts(which(mfilename)),'get_3d_info_textures');
 
 % Run OpenGL binary as background process:
 if isdir(meshName)

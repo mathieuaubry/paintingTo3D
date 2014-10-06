@@ -4,11 +4,10 @@
 addpath ./renderer;
 addpath ./code;
 
-BIN_PATH = './renderer/get_3d_info_textures';
 load camera_10000_ratio_2;
 meshFileName = 'out_model_venice';
 
-img = meshGenerateColored(P,meshFileName,size(I),BIN_PATH);
+img = meshGenerateColored(P,meshFileName,size(I));
 
 figure;
 imshow(img);
