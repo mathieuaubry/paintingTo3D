@@ -40,14 +40,17 @@ The paintings we used to test our method are available [here](http://www.di.ens.
 
 ### COMPILING THE RENDERER:
 
+To view the final results you will need to render from the 3D model.
+The following are instructions for compiling the renderer.
+
 1. Download [trimesh2](http://gfx.cs.princeton.edu/proj/trimesh2/src/trimesh2-2.12.tar.gz) and uncompress the tarball.
 
 2. Define the following variables:
 
-   $PAINTING_CODE - location of "paintingTo3D" code
-   $TRIMESH2 - location of trimesh2 folder
-   $MEX - command-line location of mex compiler (get location by running "fullfile(matlabroot,'bin','mex')" in Matlab)
-   $ARCH - set this to one of {Linux | Linux64 | Darwin | Darwin64} depending on which architecture you are compiling (e.g. "Darwin64" is 64-bit Mac)
+   - $PAINTING_CODE - location of "paintingTo3D" code
+   - $TRIMESH2 - location of trimesh2 folder
+   - $MEX - command-line location of mex compiler (get location by running "fullfile(matlabroot,'bin','mex')" in Matlab)
+   - $ARCH - set this to one of {Linux | Linux64 | Darwin | Darwin64} depending on which architecture you are compiling (e.g. "Darwin64" is 64-bit Mac)
 
 3. Run the following in a Bash shell:
 
