@@ -37,6 +37,64 @@ Additionaly, you can download our pre-computed discriminative elements for:
 
 
 The paintings we used to test our method are available [here](http://www.di.ens.fr/willow/research/painting_to_3d/data/Paintings.zip) (40MB)
+
+### COMPILING THE RENDERER:
+
+1. Download [trimesh2](http://gfx.cs.princeton.edu/proj/trimesh2/src/trimesh2-2.12.tar.gz) and uncompress the tarball.
+
+2. Define the following variables:
+
+   $PAINTING_CODE - location of "paintingTo3D" code
+   $TRIMESH2 - location of trimesh2 folder
+   $MEX - command-line location of mex compiler (get location by running "fullfile(matlabroot,'bin','mex')" in Matlab)
+   $ARCH - set this to one of {Linux | Linux64 | Darwin | Darwin64} depending on which architecture you are compiling (e.g. "Darwin64" is 64-bit Mac)
+
+3. Run the following in a Bash shell:
+
+   ``` sh
+   $ cd $PAINTING_CODE/renderer
+   $ make TRIMESHDIR=$TRIMESH2
+   $ $MEX mexReadPly.cpp -I$TRIMESH2/include -L$TRIMESH2/lib.$ARCH -ltrimesh -lgomp
+   ```
+
+Common problems:
+
+- If you are compiling on Mac and get a "library not found for -lgomp"
+error, then you are using a CLANG compiler (recent versions of Mac use
+this), which does not contain openmp.  To resolve this you can install
+an older gcc compiler via homebrew.  Replace "Step 3" above with the
+following:
+
+   ``` sh
+   $ brew install homebrew/versions/gcc49
+   $ cd $PAINTING_CODE/renderer
+   $ make TRIMESHDIR=$TRIMESH2 CC=gcc-4.9 CXX=g++-4.9
+   $ $MEX mexReadPly.cpp -I$TRIMESH2/include -L$TRIMESH2/lib.$ARCH -ltrimesh -lgomp CXX=g++-4.9 CXXFLAGS="-fno-common -arch x86_64 -fexceptions"
+   ```
+
+- If you are compiling on Linux and get an error saying to recompile
+with -fPIC, then you need to recompile trimesh2.  Run inside a Bash shell:
+
+   ``` sh
+   $ cd $TRIMESH2
+   $ make ARCHOPTS=-fPIC
+   ```
+
+   Then re-run "Step 3" above.
+
++ If you're running on Linux and the code hangs, first make sure you can
+display X windows (i.e. if you're running over SSH make sure you have X
+forwarding enabled; you can test this by running "xterm" in the bash
+shell).  If you can display X windows but the code hangs, then 
+run the following in the Bash shell:
+
+   ``` sh
+   $ export LIBGL_ALWAYS_INDIRECT=1
+   ```
+
+   Then try to run demoRendering.m again.
+
+
 ### RUNNING THE CODE:
 
 1. Start by compiling the code.  At the Matlab command prompt run:
