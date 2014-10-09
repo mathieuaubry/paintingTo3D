@@ -82,6 +82,7 @@ The following are instructions for compiling the renderer.
    $ cd $PAINTING_CODE/renderer
    $ make TRIMESHDIR=$TRIMESH2
    $ $MEX mexReadPly.cpp -I$TRIMESH2/include -L$TRIMESH2/lib.$ARCH -ltrimesh -lgomp
+   $ $MEX mexWritePly.cpp -I$TRIMESH2/include -L$TRIMESH2/lib.$ARCH -ltrimesh -lgomp
    ```
 
 4. To test the renderer, download this  [test camera](http://www.di.ens.fr/willow/research/painting_to_3d/data/test_camera.mat) and run the script inside [demoRendering.m](https://github.com/mathieuaubry/paintingTo3D/blob/master/demoRendering.m).
@@ -99,6 +100,7 @@ following:
    $ cd $PAINTING_CODE/renderer
    $ make TRIMESHDIR=$TRIMESH2 CC=gcc-4.9 CXX=g++-4.9
    $ $MEX mexReadPly.cpp -I$TRIMESH2/include -L$TRIMESH2/lib.$ARCH -ltrimesh -lgomp CXX=g++-4.9 CXXFLAGS="-fno-common -arch x86_64 -fexceptions"
+   $ $MEX mexWritePly.cpp -I$TRIMESH2/include -L$TRIMESH2/lib.$ARCH -ltrimesh -lgomp CXX=g++-4.9 CXXFLAGS="-fno-common -arch x86_64 -fexceptions"
    ```
 
 - If you are compiling on Linux and get an error saying to recompile
