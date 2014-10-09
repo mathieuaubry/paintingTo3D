@@ -40,6 +40,23 @@ The paintings we used to test our method are available [here](http://www.di.ens.
 
 To test the renderer, you can also download a  [test camera](http://www.di.ens.fr/willow/research/painting_to_3d/data/test_camera.mat) recovered by our algorithm with the associated painting.
 
+
+### RUNNING THE CODE:
+
+1. Start by compiling the code.  At the Matlab command prompt run:
+
+   ``` sh
+   >> compile;
+   ```
+
+2. Download or generate the rendered views of the model you want to work with.
+ 
+3. (Optional) [demoSelectDEs.m](https://github.com/mathieuaubry/paintingTo3D/blob/master/demoSelectDEs.m) is a script that computes the discriminative elements from a set of rendered views of a 3D model and their associated Cameras and 3D points. It must be run before doing detection. 
+Alternatively, you can download our pre-computed discriminative elements (see DOWNLOAD THE DATA section).
+
+4. [demoAlignPainting.m](https://github.com/mathieuaubry/paintingTo3D/blob/master/demoAlignPainting.m) is a script that uses the discriminative elements to recover the camera parameters corresponding to the viewpoint of the painting.
+
+
 ### COMPILING THE RENDERER:
 
 To view the final results you will need to render from the 3D model.
@@ -107,21 +124,6 @@ run the following in the Bash shell:
 
    Then try to run [demoRendering.m](https://github.com/mathieuaubry/paintingTo3D/blob/master/demoRendering.m) again.
 
-
-### RUNNING THE CODE:
-
-1. Start by compiling the code.  At the Matlab command prompt run:
-
-   ``` sh
-   >> compile;
-   ```
-
-2. Download or generate the rendered views of the model you want to work with.
- 
-3. (Optional) [demoSelectDEs.m](https://github.com/mathieuaubry/paintingTo3D/blob/master/demoSelectDEs.m) is a script that computes the discriminative elements from a set of rendered views of a 3D model and their associated Cameras and 3D points. It must be run before doing detection. 
-Alternatively, you can download our pre-computed discriminative elements (see DOWNLOAD THE DATA section).
-
-4. [demoAlignPainting.m](https://github.com/mathieuaubry/paintingTo3D/blob/master/demoAlignPainting.m) is a script that uses the discriminative elements to recover the camera parameters corresponding to the viewpoint of the painting.
 
 ### ACKNOWLEDGMENTS:
 
