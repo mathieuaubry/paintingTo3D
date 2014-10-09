@@ -127,6 +127,12 @@ run the following in the Bash shell:
    Then try to run [demoRendering.m](https://github.com/mathieuaubry/paintingTo3D/blob/master/demoRendering.m) again.
 
 
+### READING SKETCHUP MODELS:
+
+To interact with Sketchup models, we provide a function to convert to
+our renderer.  Look at the instructions inside [BuildTexturedModel.m](https://github.com/mathieuaubry/paintingTo3D/blob/master/renderer/BuildTexturedModel.m) for more details.
+
+
 ### ACKNOWLEDGMENTS:
 
 The functions features.cc and bboverlap.m have been adapted from Ross Girshick's and Pedro Felzenswalb's implementation available at https://github.com/rbgirshick/voc-dpm
