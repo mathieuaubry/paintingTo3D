@@ -4,7 +4,7 @@
 addpath ./renderer;
 addpath ./code;
 
-load camera_10000_ratio_2;
+load test_camera;
 meshFileName = 'out_model_venice';
 
 img = meshGenerateColored(P,meshFileName,size(I));
