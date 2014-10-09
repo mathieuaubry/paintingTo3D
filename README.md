@@ -67,7 +67,7 @@ The following are instructions for compiling the renderer.
    $ $MEX mexReadPly.cpp -I$TRIMESH2/include -L$TRIMESH2/lib.$ARCH -ltrimesh -lgomp
    ```
 
-4. To test the renderer, run the script inside [demoRendering.m](https://github.com/mathieuaubry/paintingTo3D/blob/master/demoRendering.m).
+4. To test the renderer, download this  [test camera](http://www.di.ens.fr/willow/research/painting_to_3d/data/test_camera.mat) and run the script inside [demoRendering.m](https://github.com/mathieuaubry/paintingTo3D/blob/master/demoRendering.m).
 
 Common problems:
 
