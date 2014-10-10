@@ -38,7 +38,7 @@ Additionaly, you can download our pre-computed discriminative elements for:
 
 The paintings we used to test our method are available [here](http://www.di.ens.fr/willow/research/painting_to_3d/data/Paintings.zip) (40MB)
 
-To test the renderer, you can also download a  [test camera](http://www.di.ens.fr/willow/research/painting_to_3d/data/test_camera.mat) recovered by our algorithm with the associated painting and the associated [3D model](http://www.di.ens.fr/willow/research/painting_to_3d/data/out_model_venice.tar) converted for use with our renderer (see READING SKETCHUP MODELS section).
+To test the renderer, you can also download a  [test camera](http://www.di.ens.fr/willow/research/painting_to_3d/data/test_camera.mat) recovered by our algorithm with the associated painting and the [3D model](http://www.di.ens.fr/willow/research/painting_to_3d/data/out_model_venice.tar) converted for use with our renderer (see READING SKETCHUP MODELS section).
 
 
 ### RUNNING THE CODE:
