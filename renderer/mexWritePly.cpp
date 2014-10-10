@@ -14,6 +14,8 @@
 #include "TriMesh.h"
 #include "mex.h"
 
+using namespace trimesh;
+
 // Inputs:
 // filename
 // vertices
