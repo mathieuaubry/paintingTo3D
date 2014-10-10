@@ -14,6 +14,6 @@ alignPainting(MODEL_DIR,painting_name,DE_params,view_params,output_name);
 %% The renderer needs to be compiled for this last part to work
 addpath ./renderer;
 meshFileName = 'out_model_venice';
-load output_name;
+load(output_name);
 img = meshGenerateColored(P,meshFileName,size(I));
 imshow(img);

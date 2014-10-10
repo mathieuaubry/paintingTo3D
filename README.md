@@ -38,7 +38,7 @@ Additionaly, you can download our pre-computed discriminative elements for:
 
 The paintings we used to test our method are available [here](http://www.di.ens.fr/willow/research/painting_to_3d/data/Paintings.zip) (40MB)
 
-To test the renderer, you can also download a  [test camera](http://www.di.ens.fr/willow/research/painting_to_3d/data/test_camera.mat) recovered by our algorithm with the associated painting.
+To test the renderer, you can also download a  [test camera](http://www.di.ens.fr/willow/research/painting_to_3d/data/test_camera.mat) recovered by our algorithm with the associated painting and the [3D model](http://www.di.ens.fr/willow/research/painting_to_3d/data/out_model_venice.tar) converted for use with our renderer (see READING SKETCHUP MODELS section).
 
 
 ### RUNNING THE CODE:
@@ -54,7 +54,7 @@ To test the renderer, you can also download a  [test camera](http://www.di.ens.f
 3. (Optional) [demoSelectDEs.m](https://github.com/mathieuaubry/paintingTo3D/blob/master/demoSelectDEs.m) is a script that computes the discriminative elements from a set of rendered views of a 3D model and their associated Cameras and 3D points. It must be run before doing detection. 
 Alternatively, you can download our pre-computed discriminative elements (see DOWNLOAD THE DATA section).
 
-4. [demoAlignPainting.m](https://github.com/mathieuaubry/paintingTo3D/blob/master/demoAlignPainting.m) is a script that uses the discriminative elements to recover the camera parameters corresponding to the viewpoint of the painting.
+4. [demoAlignPainting.m](https://github.com/mathieuaubry/paintingTo3D/blob/master/demoAlignPainting.m) is a script that uses the discriminative elements to recover the camera parameters corresponding to the viewpoint of the painting. To render the recovered viewpoint, you must first compile the renderer code (see next section).
 
 
 ### COMPILING THE RENDERER:
@@ -85,7 +85,7 @@ The following are instructions for compiling the renderer.
    $ $MEX mexWritePly.cpp -I$TRIMESH2/include -L$TRIMESH2/lib.$ARCH -ltrimesh -lgomp
    ```
 
-4. To test the renderer, download this  [test camera](http://www.di.ens.fr/willow/research/painting_to_3d/data/test_camera.mat) and run the script inside [demoRendering.m](https://github.com/mathieuaubry/paintingTo3D/blob/master/demoRendering.m).
+4. To test the renderer, download this  [test camera](http://www.di.ens.fr/willow/research/painting_to_3d/data/test_camera.mat), the associated [3D model](http://www.di.ens.fr/willow/research/painting_to_3d/data/out_model_venice.tar) converted for use with our renderer (see READING SKETCHUP MODELS section) and run the script inside [demoRendering.m](https://github.com/mathieuaubry/paintingTo3D/blob/master/demoRendering.m).
 
 Common problems:
 
