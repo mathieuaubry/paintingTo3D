@@ -1,4 +1,4 @@
-function []=alignPainting(MODEL_DIR,painting_name,DE_params,view_params,output_name)
+function []=alignPainting(MODEL_DIR,painting_name,DE_params,view_params,out_name)
 
 if exist(out_name)
     return;
