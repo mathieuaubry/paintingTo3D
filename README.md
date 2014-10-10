@@ -38,7 +38,7 @@ Additionaly, you can download our pre-computed discriminative elements for:
 
 The paintings we used to test our method are available [here](http://www.di.ens.fr/willow/research/painting_to_3d/data/Paintings.zip) (40MB)
 
-To test the renderer, you can also download a  [test camera](http://www.di.ens.fr/willow/research/painting_to_3d/data/test_camera.mat) recovered by our algorithm with the associated painting.
+To test the renderer, you can also download a  [test camera](http://www.di.ens.fr/willow/research/painting_to_3d/data/test_camera.mat) recovered by our algorithm with the associated painting and the associated [3D model](http://www.di.ens.fr/willow/research/painting_to_3d/data/out_model_venice.tar) converted for use with our renderer (see READING SKETCHUP MODELS section).
 
 
 ### RUNNING THE CODE:
@@ -85,7 +85,7 @@ The following are instructions for compiling the renderer.
    $ $MEX mexWritePly.cpp -I$TRIMESH2/include -L$TRIMESH2/lib.$ARCH -ltrimesh -lgomp
    ```
 
-4. To test the renderer, download this  [test camera](http://www.di.ens.fr/willow/research/painting_to_3d/data/test_camera.mat) and run the script inside [demoRendering.m](https://github.com/mathieuaubry/paintingTo3D/blob/master/demoRendering.m).
+4. To test the renderer, download this  [test camera](http://www.di.ens.fr/willow/research/painting_to_3d/data/test_camera.mat), the associated [3D model](http://www.di.ens.fr/willow/research/painting_to_3d/data/out_model_venice.tar) converted for use with our renderer (see READING SKETCHUP MODELS section) and run the script inside [demoRendering.m](https://github.com/mathieuaubry/paintingTo3D/blob/master/demoRendering.m).
 
 Common problems:
 
