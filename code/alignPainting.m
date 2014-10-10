@@ -10,7 +10,12 @@ end
 
 [all_hogs unused bboxes]=getHogVector(I,DE_params);
 
-load([MODEL_DIR '/all_DEs.mat'],'all_DEs');
+if exist([MODEL_DIR '/all_DEs.mat'])
+    load([MODEL_DIR '/all_DEs.mat'],'all_DEs');
+else
+    error('You must compute or download the discriminative elements before aligning a painting');
+end
+
 x=[];
 X=[];
 conf=[];
